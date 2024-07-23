@@ -29,9 +29,9 @@ jobs:
         run: pnpm install
 
       - name: Build TypeScript and bundle into asar
-        run: pnpm run bundle
+        run: pnpm run build
 
       - uses: ncipollo/release-action@v1
         with:
-          artifacts: "bundle/*"
+          artifacts: "dist"
           makeLatest: true
