@@ -16,14 +16,12 @@ System info in discord rpc.
 #### Config
 
 ```json
-{
   "clientId" // String - Client id of the application from discord developer portal. Determines the name of RPC
   "largeImage" //  String - Key For the large image correspoding to asset name uploaded on discord developer portal or image link.
   "smallImage" //  String - Key For the small image correspoding to asset name uploaded on discord developer portal or image link.
   "buttons" // Array<{label: string; url: string;}> - Buttons to be shown on RPC.
   "timestamp" // Boolean - Whether to show uptime as timestamp or not.
   "interval" // Number - In how much Time (ms) to get system info and update RPC.
-}
 ```
 ---
 #### Prerequisites
