@@ -1,0 +1,23 @@
+{
+  "compilerOptions": {
+    "target": "ES2017",
+    "module": "ES2022", // or "commonjs" if you prefer CommonJS modules
+    "moduleResolution": "node",
+    "resolveJsonModule": true,
+    "lib": ["es2020", "ESNext", "DOM", "DOM.Iterable"],
+    "allowJs": true,
+    "outDir": "./build",
+    "strict": true,
+    "noEmit": false,
+    "esModuleInterop": true,
+    "skipLibCheck": true,
+    "checkJs": true,
+    "forceConsistentCasingInFileNames": true,
+    "sourceMap": true
+  },
+  "include": ["src/**/*"],
+  "exclude": ["node_modules"],
+  "ts-node": {
+    "esm": true
+  }
+}

@@ -1,0 +1,43 @@
+{
+  "name": "systemrpc",
+  "version": "1.0.0",
+  "description": "",
+  "main": "./src/index.ts",
+  "engines": {
+    "node": ">=20.0.0",
+    "pnpm": ">=9.0.0"
+  },
+  "packageManager": "pnpm@9.4.0",
+  "scripts": {
+    "build": "node build.js",
+    "start": "node dist/index",
+    "test": "node build.js && node dist/index",
+    "typescript:check": "tsc --noEmit",
+    "prettier:check": "prettier ./src --check",
+    "eslint:check": "eslint ./src",
+    "prettier:fix": "prettier ./src --write",
+    "eslint:fix": "eslint ./src  --fix",
+    "lint": "pnpm run prettier:check && pnpm run eslint:check && pnpm run typescript:check",
+    "lint:fix": "pnpm run prettier:fix && pnpm run eslint:fix && pnpm run typescript:check"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "discord-rpc": "^4.0.1",
+    "esbuild": "^0.23.0",
+    "systeminformation": "^5.22.11",
+    "ts-node": "^10.9.2"
+  },
+  "devDependencies": {
+    "@types/discord-rpc": "^4.0.8",
+    "@types/node": "^20.14.11",
+    "boxen": "^8.0.0",
+    "chalk": "^5.3.0",
+    "eslint": "^8.57.0",
+    "eslint-config-dmitmel": "github:dmitmel/eslint-config-dmitmel",
+    "eslint-plugin-node": "^11.1.0",
+    "prettier": "^3.3.2",
+    "typescript": "^5.4.5"
+  }
+}
