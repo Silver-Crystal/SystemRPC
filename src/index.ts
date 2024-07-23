@@ -3,7 +3,7 @@ import { clientId } from "../config.json";
 import utils from "./utils";
 export const RPC = new DiscordRPC.Client({ transport: "ipc" });
 
-export const start = async (tries: number) => {
+export const start = async (tries: number): Promise<void> => {
   try {
     await RPC.login({ clientId });
   } catch {
@@ -11,7 +11,7 @@ export const start = async (tries: number) => {
       utils.logger.loginFailed(tries);
       setTimeout(
         () => {
-          start(tries + 1);
+          void start(tries + 1);
         },
         (tries || 0) + 1 * 10000,
       );
@@ -23,4 +23,4 @@ export const start = async (tries: number) => {
   utils.logger.loginSuccess(RPC.application?.name);
 };
 
-void import("./events").then(() => start(0));
+void import("./events").then(() => void start(0));

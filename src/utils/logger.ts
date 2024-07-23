@@ -8,7 +8,7 @@ const logStyle = {
   margin: 0.5,
 } as const;
 
-export const logAuth = (userName: string | undefined) => {
+export const logAuth = (userName: string | undefined): void => {
   console.clear();
   const title = chalk.bold.blue("User Authentication");
   const message = userName
@@ -18,7 +18,7 @@ export const logAuth = (userName: string | undefined) => {
   console.log(boxedMessage);
 };
 
-export const loginSuccess = (userName: string | undefined) => {
+export const loginSuccess = (userName: string | undefined): void => {
   const title = chalk.bold.blue("Logged In");
   const message = userName
     ? `${title}\n${chalk.green("Connected to discord with Application:")} ${chalk.cyan(userName)}`
@@ -27,7 +27,7 @@ export const loginSuccess = (userName: string | undefined) => {
   console.log(boxedMessage);
 };
 
-export const loginFailed = (retry?: number) => {
+export const loginFailed = (retry?: number): void => {
   const title = chalk.bold.red("Login Failed");
   const message =
     retry || 0
@@ -37,7 +37,7 @@ export const loginFailed = (retry?: number) => {
   console.log(boxedMessage);
 };
 
-export const connectionClosed = () => {
+export const connectionClosed = (): void => {
   const title = chalk.bold.red("Connection Closed");
   const message = `${title}\n${chalk.green("Retrying in")} ${chalk.cyan(`${6 * 10000}`)}ms`;
   const boxedMessage = boxen(message, logStyle);

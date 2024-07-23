@@ -2,11 +2,15 @@ import systemInfo from "systeminformation";
 import os from "node:os";
 import utils from "./index";
 import { RPC } from "../index";
-import { largeImage, smallImage, buttons } from "../../config.json";
-const cachedInfo = {};
+import { buttons, largeImage, smallImage } from "../../config.json";
+const cachedInfo = {} as {
+  cpu: systemInfo.Systeminformation.CpuData;
+  osInfo: systemInfo.Systeminformation.OsData;
+  startTime: number;
+};
+
 export default async (): Promise<void> => {
   const cpuData = await systemInfo.currentLoad();
-
   const memData = await systemInfo.mem();
   const cpuUsage = cpuData.currentLoad.toFixed(2);
   const ramUsage = (memData.used / 1024 ** 3).toFixed(2);
@@ -14,8 +18,7 @@ export default async (): Promise<void> => {
   cachedInfo.cpu = await systemInfo.cpu();
   cachedInfo.osInfo ??= await systemInfo.osInfo();
   cachedInfo.startTime ??= Date.now() - Number((os.uptime() * 1000).toFixed(0));
-
-  RPC.setActivity({
+  await RPC.setActivity({
     details: `CPU Usage: ${cpuUsage}%`,
     state: `RAM Usage: ${ramUsage} GB / ${totalRam} GB`,
     largeImageText: cachedInfo.cpu.brand,
@@ -24,7 +27,7 @@ export default async (): Promise<void> => {
       "https://cdn.discordapp.com/banners/1183807775357272114/a_2985df25876f80d1365798bd7205ef8a.gif?size=1024", // Set your large image key here
     smallImageText: `${cachedInfo.osInfo.distro} ${cachedInfo.osInfo.release}`,
     smallImageKey: smallImage || (await utils.getPlatform()), // Set your small image key here
-    buttons: buttons,
+    buttons,
     startTimestamp: cachedInfo.startTime,
     instance: false,
   });

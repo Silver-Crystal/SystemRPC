@@ -1,7 +1,7 @@
 import systemInfo from "systeminformation";
 import os from "node:os";
 
-export default async () => {
+export default async (): Promise<string> => {
   switch (os.platform()) {
     case "linux": {
       return "linux";
