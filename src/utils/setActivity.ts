@@ -2,7 +2,7 @@ import systemInfo from "systeminformation";
 import os from "node:os";
 import utils from "./index";
 import { RPC } from "../index";
-import { buttons, largeImage, smallImage } from "../../config.json";
+import { buttons, largeImage, smallImage, timestamp } from "../../config.json";
 const cachedInfo = {} as {
   cpu: systemInfo.Systeminformation.CpuData;
   osInfo: systemInfo.Systeminformation.OsData;
@@ -28,7 +28,7 @@ export default async (): Promise<void> => {
     smallImageText: `${cachedInfo.osInfo.distro} ${cachedInfo.osInfo.release}`,
     smallImageKey: smallImage || (await utils.getPlatform()), // Set your small image key here
     buttons,
-    startTimestamp: cachedInfo.startTime,
+    startTimestamp: timestamp ? cachedInfo.startTime : void 0,
     instance: false,
   });
 };

@@ -21,9 +21,15 @@
     "lint": "pnpm run prettier:check && pnpm run eslint:check && pnpm run typescript:check",
     "lint:fix": "pnpm run prettier:fix && pnpm run eslint:fix && pnpm run typescript:check"
   },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
+  "keywords": [
+    "rpc",
+    "discord",
+    "discord-rpc",
+    "systemrpc",
+    "system-usage"
+  ],
+  "author": "Nanakusa",
+  "license": "CC0-1.0",
   "dependencies": {
     "@marshift/argus": "^1.0.3",
     "discord-rpc": "^4.0.1",
