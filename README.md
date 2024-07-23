@@ -47,6 +47,18 @@ Use Package Manager to install all these.
 Refer to config above and make the desired change in the ``config.json`` found at root directory of project.
 
 ---
+### TODO
+
+- [x] Get it to work
+- [x] Readme / License / Workflow 
+- [ ] Auto reconnect
+- [ ] Working retries
+- [ ] Accurate CPU Usage
+- [ ] Bundling into executable
+- [ ] GUI
+- [ ] Make all strings customizable, assigning placeholders to system info.
+- [ ] Add to package managers
+---
 
 
 ### FAQ

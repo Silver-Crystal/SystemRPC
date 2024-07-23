@@ -28,10 +28,10 @@ jobs:
       - name: Install Node.js dependencies
         run: pnpm install
 
-      - name: Build TypeScript and bundle into asar
+      - name: Build TypeScript and bundle into single js file
         run: pnpm run build
 
       - uses: ncipollo/release-action@v1
         with:
-          artifacts: "dist"
+          artifacts: "dist/index.js"
           makeLatest: true
