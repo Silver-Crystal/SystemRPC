@@ -1,5 +1,5 @@
 import ready from "./ready";
 
-export default () => {
+export default (): void => {
   ready();
 };
