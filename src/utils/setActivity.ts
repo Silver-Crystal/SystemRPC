@@ -18,7 +18,7 @@ export default async (): Promise<void> => {
   cachedInfo.cpu = await systemInfo.cpu();
   cachedInfo.osInfo ??= await systemInfo.osInfo();
   cachedInfo.startTime ??= Date.now() - Number((os.uptime() * 1000).toFixed(0));
-  await RPC.setActivity({
+  await RPC.server.setActivity({
     details: `CPU Usage: ${cpuUsage}%`,
     state: `RAM Usage: ${ramUsage} GB / ${totalRam} GB`,
     largeImageText: cachedInfo.cpu.brand,

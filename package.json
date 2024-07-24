@@ -1,7 +1,7 @@
 {
   "name": "systemrpc",
   "version": "0.0.1",
-  "description": "",
+  "description": "System info in discord rpc.",
   "main": "./src/index.ts",
   "engines": {
     "node": ">=20.0.0",

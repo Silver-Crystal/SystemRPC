@@ -1,3 +1,5 @@
 import ready from "./ready";
 
-ready();
+export default () => {
+  ready();
+};

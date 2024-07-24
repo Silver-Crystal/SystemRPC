@@ -3,8 +3,9 @@ import utils from "../utils";
 import { interval } from "../../config.json";
 import disconnected from "./disconnected";
 export default (): void => {
-  RPC.on("ready", async () => {
-    utils.logger.logAuth(RPC.user?.username);
+  RPC.server.on("ready", async () => {
+    RPC.active = true;
+    utils.logger.logAuth(RPC.server.user?.username);
     await utils.setActivity();
     const internal = setInterval(async () => {
       await utils.setActivity();

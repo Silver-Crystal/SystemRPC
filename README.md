@@ -51,8 +51,8 @@ Refer to config above and make the desired change in the ``config.json`` found a
 
 - [x] Get it to work
 - [x] Readme / License / Workflow 
-- [ ] Auto reconnect
-- [ ] Working retries
+- [x] Auto reconnect
+- [x] Working retries
 - [ ] Accurate CPU Usage
 - [ ] Bundling into executable
 - [ ] GUI

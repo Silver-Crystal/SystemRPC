@@ -1,26 +1,34 @@
 import DiscordRPC from "discord-rpc";
 import { clientId } from "../config.json";
+import registerEvents from "./events";
 import utils from "./utils";
-export const RPC = new DiscordRPC.Client({ transport: "ipc" });
+
+export const RPC: { active: boolean; server: DiscordRPC.Client } = {
+  active: true,
+  server: new DiscordRPC.Client({ transport: "ipc" }),
+};
 
 export const start = async (tries: number): Promise<void> => {
   try {
-    await RPC.login({ clientId });
+    if (!RPC.active) RPC.server = new DiscordRPC.Client({ transport: "ipc" });
+    registerEvents();
+    await RPC.server.login({ clientId });
   } catch {
-    if (tries <= 5) {
-      utils.logger.loginFailed(tries);
+    utils.logger.loginFailed(tries);
+    await new Promise<void>((resolve) => {
       setTimeout(
-        () => {
-          void start(tries + 1);
+        async () => {
+          RPC.server?.destroy?.().catch(() => {});
+          RPC.active = false;
+          await start(tries <= 5 ? tries : 5);
+          resolve();
         },
-        (tries || 0) + 1 * 10000,
+        ((tries <= 5 ? tries : 5) + 1) * 10000,
       );
-      return;
-    }
-    utils.logger.loginFailed();
-    process.exit(0);
+    });
+    return;
   }
-  utils.logger.loginSuccess(RPC.application?.name);
+  utils.logger.loginSuccess(RPC.server.application?.name);
 };
 
-void import("./events").then(() => void start(0));
+void start(0);

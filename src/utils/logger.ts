@@ -30,8 +30,8 @@ export const loginSuccess = (userName: string | undefined): void => {
 export const loginFailed = (retry?: number): void => {
   const title = chalk.bold.red("Login Failed");
   const message =
-    retry || 0
-      ? `${title}\n${chalk.green("Retrying in")} ${chalk.cyan(`${(retry || 0) + 1 * 10000}`)}ms`
+    retry == 0 || retry
+      ? `${title}\n${chalk.green("Retrying in")} ${chalk.cyan(`${((retry <= 5 ? retry : 5) + 1) * 10000}`)}ms`
       : `${title}\n${chalk.red("Exiting Process")}`;
   const boxedMessage = boxen(message, logStyle);
   console.log(boxedMessage);
@@ -39,7 +39,7 @@ export const loginFailed = (retry?: number): void => {
 
 export const connectionClosed = (): void => {
   const title = chalk.bold.red("Connection Closed");
-  const message = `${title}\n${chalk.green("Retrying in")} ${chalk.cyan(`${6 * 10000}`)}ms`;
+  const message = `${title}\n${chalk.green("Retrying in")} ${chalk.cyan(`${1.5 * 10000}`)}ms`;
   const boxedMessage = boxen(message, logStyle);
   console.log(boxedMessage);
 };
