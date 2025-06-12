@@ -50,8 +50,8 @@ After downloading the tar.gz, extract and run the file named 'Discord'.
 <details>
 <summary>Adding to applications menu</summary>
 
-You can modify the discord.desktop file - changing (`Exec=/usr/share/discord/Discord`) and replacing (`/usr/share/discord/Discord`) with the path to your own executable discord file.
-Copy the file to (`/usr/share/applications/`) (```sudo cp <path to .desktop file> /usr/share/applications```)   
+You can modify the discord.desktop file - changing 'Exec=/usr/share/discord/Discord' and replacing '/usr/share/discord/Discord' with the path to your own executable discord file.
+Copy the file to '/usr/share/applications/' (```sudo cp <path to .desktop file> /usr/share/applications```)   
 </details>
 </details>
 </details>
