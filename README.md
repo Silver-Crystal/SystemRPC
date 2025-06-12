@@ -38,10 +38,12 @@ Use Package Manager to install all these.
 
 <details>
 <summary>Not on Windows?</summary>
+
 Do **NOT** use flatpak or snap version(both of them isolate the app), use the .tar.gz or .deb as appropriate [Discord](https://discord.com)
 
 <details>
 <summary>fedora kde plasma</summary>
+
 [Discord tar.gz](https://discord.com/api/download?platform=linux&format=tar.gz)
 After downloading the tar.gz, extract and run the file named 'Discord'.
 Adding to applications menu
