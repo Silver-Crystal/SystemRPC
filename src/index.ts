@@ -1,4 +1,4 @@
-import DiscordRPC from "discord-rpc";
+import DiscordRPC from  ;
 import { clientId } from "../config.json";
 import registerEvents from "./events";
 import utils from "./utils";
