@@ -51,6 +51,7 @@ You can modify the discord.desktop file - changing (`Exec=/usr/share/discord/Dis
 Copy the file to (`/usr/share/applications/`) (```sudo cp <path to .desktop file> /usr/share/applications```)   
 </details>
 </details>
+
 ### Getting Started
 - Clone the Repository (``git clone <repo url>``)
 - cd into the folder (``cd SystemRPC``)
