@@ -38,6 +38,7 @@ Use Package Manager to install all these.
 
 ### Getting Started
 - Clone the Repository (``git clone <repo url>``)
+- cd into the folder (``cd SystemRPC``)
 - Install the dependencies (``pnpm install``)
 - Build Project (``pnpm build``)
 - Start Project (``pnpm start``)
