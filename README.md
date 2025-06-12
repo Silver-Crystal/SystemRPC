@@ -42,11 +42,9 @@ Do **NOT** use flatpak or snap version(both of them isolate the app), use the .t
 <summary>fedora kde plasma</summary>
 [Discord tar.gz](https://discord.com/api/download?platform=linux&format=tar.gz)
 After downloading the tar.gz, extract and run the file named 'Discord'.
-<details>
-<summary>adding to applications menu</summary>
+Adding to applications menu
 You can modify the discord.desktop file - changing (`Exec=/usr/share/discord/Discord`) and replacing (`/usr/share/discord/Discord`) with the path to your own executable discord file.
 Copy the file to (`/usr/share/applications/`) (```sudo cp <path to .desktop file> /usr/share/applications```)   
-</details>
 </details>
 </details>
 ### Getting Started
