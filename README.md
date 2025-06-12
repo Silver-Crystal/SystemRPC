@@ -35,9 +35,11 @@ System info in discord rpc.
 Use Package Manager to install all these.
 - Personally Recommeding Scoop.
 </details>
+
 <details>
 <summary>Not on Windows?</summary>
 Do **NOT** use flatpak or snap version(both of them isolate the app), use the .tar.gz or .deb as appropriate [Discord](https://discord.com)
+
 <details>
 <summary>fedora kde plasma</summary>
 [Discord tar.gz](https://discord.com/api/download?platform=linux&format=tar.gz)
